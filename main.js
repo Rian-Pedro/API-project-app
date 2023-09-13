@@ -3,7 +3,7 @@ const app = express();
 
 const mongoose = require("mongoose");
 //mongodb+srv://systemw287:<password>@charge.iodlozw.mongodb.net/?retryWrites=true&w=majority
-//cIO6vPldG48zQKSj
+//cIO6vPldG48zQKSj 
 const routes = require("./routes");
 
 const cors = require("cors");

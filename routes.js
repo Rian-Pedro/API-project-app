@@ -36,6 +36,10 @@ router.get("/userLogin", async (req, res) => {
   res.json(await loginModel.login("user", req.body.email, "", req.body.pass));
 });
 
+router.get("/employeeLogin", async (req, res) => {
+  res.json(await loginModel.login("employee", "", req.body.ident, req.body.pass));
+});
+
 router.post("/employeeRegister", 
             validationMiddleware.isString, 
             hashMiddleware.createHash, 

@@ -34,6 +34,14 @@ module.exports = class LoginModel {
           permission: true
         }
       }
+    } else {
+      const employee = await employeeModel.findOne({ident: ident});
+      if(await hashMiddleware.comparePass(employee.password, pass)) {
+        return {
+          access: "Acesso de funcionario permitida",
+          permission: true
+        }
+      }
     }
   }
 
