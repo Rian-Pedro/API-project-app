@@ -28,7 +28,7 @@ module.exports = class LoginModel {
   static async login(who, email, ident, pass) {
     if(who === "user") {
       const user = await userModel.findOne({email: email});
-      if(!user) return { user: user }
+      if(!user) return { access: "Acesso negado, usuario não existe", permission: false }
       if(await hashMiddleware.comparePass(user.password, pass)) {
         return {
           access: "Acesso permitido",
