@@ -33,6 +33,11 @@ module.exports = class LoginModel {
           access: "Acesso permitido",
           permission: true
         }
+      }  else {
+        return {
+          access: "Acesso de negada",
+          permission: false
+        }
       }
     } else {
       const employee = await employeeModel.findOne({ident: ident});
@@ -40,6 +45,11 @@ module.exports = class LoginModel {
         return {
           access: "Acesso de funcionario permitida",
           permission: true
+        }
+      } else {
+        return {
+          access: "Acesso de funcionario negada",
+          permission: false
         }
       }
     }
