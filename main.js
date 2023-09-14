@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 
 const mongoose = require("mongoose");
+const cors = require("cors");
 //mongodb+srv://systemw287:<password>@charge.iodlozw.mongodb.net/?retryWrites=true&w=majority
 //cIO6vPldG48zQKSj 
 const routes = require("./routes");
 
-const cors = require("cors");
 
 app.use(cors());
 app.use(express.json());

@@ -65,10 +65,12 @@ module.exports = class LoginModel {
       if(who === "user") {
         const newUser = new userModel(this.body);
         await newUser.save();
+        return newUser.id;
       } else {
         console.log(this.body);
         const newEmployee = new employeeModel(this.body);
         await newEmployee.save();
+        return newUser.id;
       }
       
     } catch(err) {

@@ -44,9 +44,9 @@ loginRouter.post("/employeeRegister",
             async (req, res) => {
               const employeeModel = new loginModel(req.body);
 
-              await employeeModel.register("employee");
+              const id = await employeeModel.register("employee");
 
-              res.json(req.body);
+              res.json({...req.body, userId: id});
             }
 );
 
