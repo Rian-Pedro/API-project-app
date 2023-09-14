@@ -70,7 +70,7 @@ module.exports = class LoginModel {
         console.log(this.body);
         const newEmployee = new employeeModel(this.body);
         await newEmployee.save();
-        return newUser.id;
+        return newEmployee.id;
       }
       
     } catch(err) {
