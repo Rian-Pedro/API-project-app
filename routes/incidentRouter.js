@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
         cb(null, "./uploads");
     },
     filename: (req, file, cb) => {
-        const name = Date.now() + "-" + file.originalname;
+        const name = req.body.userId + "-" + Date.now() + "-" + file.originalname;
         cb(null, name);
         req.body.imgURL = `./uploads/${name}`
     }
